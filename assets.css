@@ -1,0 +1,87 @@
+@font-face{
+	font-family: "bookkmyungjo";
+	src: url("./fonts/bookkm_bold.ttf");
+}
+
+.kkaktext{
+	color: #e6195e;
+	font-family: "bookkmyungjo";
+	float: left;
+}
+
+.kkaktext#t1{
+	position: relative;
+	top: -20;
+	animation-duration: 50s;
+	animation-name: blink;
+	animation-timing-function: ease;
+	animation-iteration-count: infinite;
+}
+
+.kkaktext#t2{
+	position: relative;
+	top: 20;
+	animation-duration: 40s;
+	animation-name: blink;
+	animation-timing-function: ease;
+	animation-iteration-count: infinite;
+}
+
+.kkaktext#t3{
+	animation-duration: 20s;
+	animation-name: blink;
+	animation-timing-function: ease;
+	animation-iteration-count: infinite;
+}
+
+.kkaktext#t4{
+	animation-duration: 30s;
+	animation-name: blink;
+	animation-timing-function: ease;
+	animation-iteration-count: infinite;
+}
+
+.kkaktext#t5{
+	animation-duration: 14s;
+	animation-name: blink;
+	animation-timing-function: ease;
+	animation-iteration-count: infinite;
+}
+
+@keyframes blink{
+	0% {
+		opacity: 100%;
+	}
+	50%{
+		opacity: 40%;
+	}
+	100%{
+		opacity: 100%;
+	}
+}
+
+.kkakblank{
+	height: inherit;
+	float: left;
+}
+
+.kkakblank#p1{
+	width: 50px;
+}
+.kkakblank#p2{
+	width: 100px;
+}
+.kkakblank#p3{
+	width: 150;
+}
+.kkakblank#p4{
+	width: 200px;
+}
+
+.kkakline{
+	height: 70px;
+	width: 100%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 10px;
+}

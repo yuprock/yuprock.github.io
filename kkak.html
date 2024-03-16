@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/kkak-icon">
+    <link rel="icon" href="favicon.ico" type="image/kkak-icon">
+	<link rel="stylesheet" href="./assets.css" type="text/css">
+  </head>
+  <script>
+    const kkakarr = []
+	var kkaks = 5;
+	
+	
+    window.onload = function(){
+	  for (i = 0; i < kkaks; i++){
+	    var tmp = document.getElementById("t"+(i+1));
+		//console.log(tmp);
+		tmp.onclick = ()=>popmsg(i);
+	    kkakarr.push(tmp);
+	  }
+	}
+    
+	function popmsg(i){
+	  console.log("message number "+i);
+	}
+	
+  </script>
+  <style>
+  </style>
+  <body style = "margin: 0; background: #fff; text-align: center">
+    <div class = "kkakline">
+        <div class = "kkaktext" id="t1" style = "font-size: 50px;">꺅</div>
+		<div class = "kkakblank" id = "p1"></div>
+		<div class = "kkaktext" id="t2" style = "font-size: 50px;">꺅</div>
+		<div class = "kkakblank" id = "p2"></div>
+		<div class = "kkaktext" id="t3" style = "font-size: 50px;">꺅</div>
+		<div class = "kkakblank" id = "p1"></div>
+		<div class = "kkaktext" id="t4" style = "font-size: 50px;">꺅</div>
+		<div class = "kkakblank" id = "p2"></div>
+		<div class = "kkaktext" id="t5" style = "font-size: 50px;">꺅</div>
+    </div>
+	<div class = "kkakline" id = "2">
+        <span class = "kkaktext" style = "font-size: 50px;">꺅</span>
+		<div class = "kkakblank" id = "p1"></div>
+		<div class = "kkaktext" style = "font-size: 50px;">꺅</div>
+		<div class = "kkakblank" id = "p2"></div>
+		<div class = "kkaktext" style = "font-size: 50px;">꺅</div>
+		<div class = "kkakblank" id = "p3"></div>
+		<div class = "kkaktext" style = "font-size: 50px;">꺅</div>
+    </div>
+  </body>
+</html>
