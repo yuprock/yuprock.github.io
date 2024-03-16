@@ -22,7 +22,7 @@
 	position: relative;
 	top: 20;
 	animation-duration: 40s;
-	animation-name: blink;
+	animation-name: blink2;
 	animation-timing-function: ease;
 	animation-iteration-count: infinite;
 }
@@ -36,14 +36,14 @@
 
 .kkaktext#t4{
 	animation-duration: 30s;
-	animation-name: blink;
+	animation-name: blink3;
 	animation-timing-function: ease;
 	animation-iteration-count: infinite;
 }
 
 .kkaktext#t5{
 	animation-duration: 14s;
-	animation-name: blink;
+	animation-name: blink2;
 	animation-timing-function: ease;
 	animation-iteration-count: infinite;
 }
@@ -57,6 +57,36 @@
 	}
 	100%{
 		opacity: 100%;
+	}
+}
+
+@keyframes blink2{
+	0% {
+		opacity: 50%;
+	}
+	8%{
+		opacity: 40%;
+	}
+	58%{
+		opacity: 100%;
+	}
+	100% {
+		opacity: 50%;
+	}
+}
+
+@keyframes blink3{
+	0% {
+		opacity: 70%;
+	}
+	25%{
+		opacity: 40%;
+	}
+	75%{
+		opacity: 100%;
+	}
+	100% {
+		opacity: 70%;
 	}
 }
 
