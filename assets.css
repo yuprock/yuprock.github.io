@@ -12,7 +12,7 @@
 .kkaktext#t1{
 	position: relative;
 	top: -20;
-	animation-duration: 50s;
+	animation-duration: 40s;
 	animation-name: blink;
 	animation-timing-function: ease;
 	animation-iteration-count: infinite;
@@ -28,14 +28,14 @@
 }
 
 .kkaktext#t3{
-	animation-duration: 20s;
+	animation-duration: 40s;
 	animation-name: blink;
 	animation-timing-function: ease;
 	animation-iteration-count: infinite;
 }
 
 .kkaktext#t4{
-	animation-duration: 30s;
+	animation-duration: 40s;
 	animation-name: blink3;
 	animation-timing-function: ease;
 	animation-iteration-count: infinite;
