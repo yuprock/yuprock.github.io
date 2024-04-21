@@ -13,6 +13,7 @@
 	var modclose = null;
 	var pophead = null;
 	var popbody = null;
+	var hambtn = null;
 	
 	let filename = "./messages.txt";
 	//let fr = new FileReader();
@@ -31,6 +32,8 @@
 	  modclose = document.querySelector('.clsbtn');
 	  pophead = document.querySelector('.pophead');
 	  popbody = document.querySelector('.popbody');
+	  hambtn = document.querySelector('.hambtn');
+	  sidebar = document.querySelector('.sideBar');
 	  
 	  readFile(filename);
 	  //fetchfile(filename);
@@ -76,30 +79,48 @@
 
 	//$("#clsbtn").click(btnclck);
 	
+	function sidebarvis(){
+		console.log("vis!");
+		sidebar.style.transform = "translateX(-100%)";
+		hambtn.setAttribute("onClick", "sidebarinvis()");
+	}
+	
+	function sidebarinvis(){
+		console.log("invis!");
+		sidebar.style.transform = "translateX(100%)";
+		hambtn.setAttribute("onClick", "sidebarvis()");
+	}
+	
 	
   </script>
   <style>
   </style>
-  <body style = "margin: 0; background: #fff; text-align: center">
-    <div class = "modpopmsg">
+  <body style = "margin: 0; background: #fff; text-align: center; overflow-X: hidden;">
+    <div class = "modpopmsg" onclick="btnclck()">
 	</div>
 	<div class = "modpop_inner">
-		<div style = "width: 100%; height: 60px;">
+		<div style = "width: 100%; height: 50px;">
 			<button class = "clsbtn" onclick="btnclck()">close<br>button</button>
 		</div>
-		<div style = "width: 100%; text-align: center; height: 60px;">
+		<div style = "width: 100%; text-align: center; height: 30px;">
 			<div class = "pophead">
 			</div>
 		</div>
-		<div style = "width: 100%; text-align: center; height: 60px;">
+		<div style = "width: 100%; text-align: center; height: 20px;">
 			<div class = "popbody">
 			</div>
 		</div>
 	</div>
 	
 	<div class = "topBar">
-		혼재하는 꺅
+		<div class = "topMenu"><div class = "hambtn" onclick="sidebarvis()">햄버거</div></div>
+		<div class = "topTitle"> 혼재하는 꺅 </div>
 	</div>
+	<div class = "sbw">
+		<div class = "sideBar">
+			asdf
+		</div>
+	
 	<div class = "body">
 		<div class = "kkakline">
 			<div class = "kkaktext" id="t1" style = "font-size: 50px;" onclick="popmsg(1)">꺅</div>
@@ -121,6 +142,15 @@
 			<div class = "kkakblank" id = "p3"></div>
 			<div class = "kkaktext" style = "font-size: 50px;">꺅</div>
 		</div>
+		<!--이거<br>어디까지<br>늘어나는거예요?<br>이거<br>어디까지<br>늘어나는거예요?<br>
+		이거<br>어디까지<br>늘어나는거예요?<br>이거<br>어디까지<br>늘어나는거예요?<br>
+		이거<br>어디까지<br>늘어나는거예요?<br>이거<br>어디까지<br>늘어나는거예요?<br>
+		이거<br>어디까지<br>늘어나는거예요?<br>이거<br>어디까지<br>늘어나는거예요?<br>
+		이거<br>어디까지<br>늘어나는거예요?<br>이거<br>어디까지<br>늘어나는거예요?<br>
+		이거<br>어디까지<br>늘어나는거예요?<br>이거<br>어디까지<br>늘어나는거예요?<br>
+		이거<br>어디까지<br>늘어나는거예요?<br>이거<br>어디까지<br>늘어나는거예요?<br>
+		이거<br>어디까지<br>늘어나는거예요?<br>이거<br>어디까지<br>늘어나는거예요?<br>-->
+	</div>
 	</div>
   </body>
 </html>
