@@ -9,10 +9,10 @@
   <script>
     const kkakarr = []
 	var kkaks = 5;
-	const modelem = document.querySelector('.modpopmsg');
-	const modclose = document.querySelector('.clsbtn');
-	const pophead = document.querySelector('.pophead');
-	const popbody = document.querySelector('.popbody');
+	const modelem = null;
+	const modclose = null;
+	const pophead = null;
+	const popbody = null;
 	
 	let filename = "./messages.txt";
 	//let fr = new FileReader();
@@ -26,6 +26,11 @@
 	  for (i = 0; i < kkaks; i++){
 	    var tmp = document.getElementById("t"+(i+1));
 	  }
+	  modelem = document.querySelector('.modpopmsg');
+	  modclose = document.querySelector('.clsbtn');
+	  pophead = document.querySelector('.pophead');
+	  popbody = document.querySelector('.popbody');
+	  
 	  readFile(filename);
 	  //fetchfile(filename);
 	}
