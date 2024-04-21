@@ -3,6 +3,32 @@
 	src: url("./fonts/bookkm_bold.ttf");
 }
 
+.kkakline{
+	height: 70px;
+	width: fit-content;
+	text-align: center;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+
+.topBar {
+	position: relative;
+	font-family: "bookkmyungjo";
+	width: 100%;
+	padding: 10px 0 10px 0;
+	height: 56 px;
+	font-size: 16px;
+	line-height:  32px;
+	margin-bottom: 20px;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	text-align: center;
+	background-color: rgba(255, 208, 230, 0.25);
+	color: #E6195E;
+	font-weight: 700;
+}
+
 .kkaktext{
 	color: #e6195e;
 	font-family: "bookkmyungjo";
@@ -170,10 +196,3 @@
 	width: 200px;
 }
 
-.kkakline{
-	height: 70px;
-	width: 100%;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	padding: 10px;
-}
