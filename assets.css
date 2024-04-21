@@ -93,6 +93,16 @@
 	opacity: 100%;
 }
 
+.popbody{
+	margin: 20;
+	position: absolute;
+}
+
+.pophead{
+	margin: 20;
+	position: absolute;
+}
+
 
 
 @keyframes blink{
