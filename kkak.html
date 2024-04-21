@@ -10,15 +10,28 @@
     const kkakarr = []
 	var kkaks = 5;
 	
+	let filename = "./messages.html";
+	//let fr = new FileReader();
+	//fr.readAsText(filename, "utf-8");
+	//fr.onload = () => {console.log(fr.result);};
 	
     window.onload = function(){
 	  for (i = 0; i < kkaks; i++){
 	    var tmp = document.getElementById("t"+(i+1));
-		//console.log(tmp);
-		tmp.onclick = ()=>popmsg(i);
-	    kkakarr.push(tmp);
 	  }
+	  readFile(filename);
+	  //fetchfile(filename);
 	}
+	
+	function readFile(filepath){
+		var xhr = new XMLHttpRequest();
+		xhr.open("GET", filepath, true);
+		xhr.onload = function(){
+			console.log(xhr.responseText);
+		};
+		xhr.send();
+	}
+	
     
 	function popmsg(i){
 	  console.log("message number "+i);
@@ -29,15 +42,15 @@
   </style>
   <body style = "margin: 0; background: #fff; text-align: center">
     <div class = "kkakline">
-        <div class = "kkaktext" id="t1" style = "font-size: 50px;">꺅</div>
+        <div class = "kkaktext" id="t1" style = "font-size: 50px;" onclick="popmsg(1)">꺅</div>
 		<div class = "kkakblank" id = "p1"></div>
-		<div class = "kkaktext" id="t2" style = "font-size: 50px;">꺅</div>
+		<div class = "kkaktext" id="t2" style = "font-size: 50px;" onclick="popmsg(2)">꺅</div>
 		<div class = "kkakblank" id = "p2"></div>
-		<div class = "kkaktext" id="t3" style = "font-size: 50px;">꺅</div>
+		<div class = "kkaktext" id="t3" style = "font-size: 50px;" onclick="popmsg(3)">꺅</div>
 		<div class = "kkakblank" id = "p1"></div>
-		<div class = "kkaktext" id="t4" style = "font-size: 50px;">꺅</div>
+		<div class = "kkaktext" id="t4" style = "font-size: 50px;" onclick="popmsg(4)">꺅</div>
 		<div class = "kkakblank" id = "p2"></div>
-		<div class = "kkaktext" id="t5" style = "font-size: 50px;">꺅</div>
+		<div class = "kkaktext" id="t5" style = "font-size: 50px;" onclick="popmsg(5)">꺅</div>
     </div>
 	<div class = "kkakline" id = "2">
         <span class = "kkaktext" style = "font-size: 50px;">꺅</span>
