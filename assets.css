@@ -77,7 +77,7 @@
 	z-index: 1000;
 }
 
-.modpopmsg .modpop_inner{
+.modpop_inner{
 	max-width: 390px;
 	min-height: 500px;
 	width: calc(100% - 48px);
