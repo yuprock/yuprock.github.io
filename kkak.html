@@ -53,9 +53,9 @@
 		pophead.innerHTML = result[2*(i-1)];
 		popbody.innerHTML = result[2*i-1];
 		modelem.style.display = "block";
-		modclose.style.display = "inline-block";
-		popbody.style.display = "inline-block";
-		pophead.style.display = "inline-block";
+		modclose.style.display = "block";
+		popbody.style.display = "block";
+		pophead.style.display = "block";
 	  }
 	}
 	
@@ -74,10 +74,14 @@
     <div class = "modpopmsg">
 	</div>
 	<div class = "modpop_inner">
-		<button class = "clsbtn" onclick="btnclck()">close<br>button</button>
-		<div class = "pophead">
+		<div style = "width: 100%">
+			<button class = "clsbtn" onclick="btnclck()">close<br>button</button>
 		</div>
-		<div class = "popbody">
+		<div style = "width: 100%">
+			<div class = "pophead">
+			</div>
+			<div class = "popbody">
+			</div>
 		</div>
 	</div>
 	
