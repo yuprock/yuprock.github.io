@@ -63,6 +63,7 @@
 	background-color: rgba(0, 0, 0, 0);
 	padding: 0;
 	opacity: 100%;
+	cursor: pointer;
 }
 
 .modpopmsg{
@@ -95,6 +96,7 @@
 	-webkit-transform: translateX(-50%);
 	z-index: 1001;
 	opacity: 100%;
+	padding: 10px;
 }
 
 .popbody{
