@@ -27,6 +27,7 @@
 	    var tmp = document.getElementById("t"+(i+1));
 	  }
 	  modelem = document.querySelector('.modpopmsg');
+	  modinner = document.querySelector('.modpop_inner');
 	  modclose = document.querySelector('.clsbtn');
 	  pophead = document.querySelector('.pophead');
 	  popbody = document.querySelector('.popbody');
@@ -53,14 +54,23 @@
 		pophead.innerHTML = result[2*(i-1)];
 		popbody.innerHTML = result[2*i-1];
 		modelem.style.display = "block";
+		modinner.style.display = "block";
 		modclose.style.display = "block";
-		popbody.style.display = "block";
-		pophead.style.display = "block";
+		//popbody.style.display = "inline";
+		//pophead.style.display = "inline";
+	  }
+	  else{
+		pophead.innerHTML = "haha";
+		popbody.innerHTML = "hahaha";
+		modelem.style.display = "block";
+		modinner.style.display = "block";
+		modclose.style.display = "block";
 	  }
 	}
 	
 	function btnclck(){
 		modelem.style.display = "none";
+		modinner.style.display = "none";
 		//document.getElementById("modpop_inner").setAttribute("style", "display: none");
 	}
 
@@ -74,12 +84,14 @@
     <div class = "modpopmsg">
 	</div>
 	<div class = "modpop_inner">
-		<div style = "width: 100%">
+		<div style = "width: 100%; height: 60px;">
 			<button class = "clsbtn" onclick="btnclck()">close<br>button</button>
 		</div>
-		<div style = "width: 100%">
+		<div style = "width: 100%; text-align: center; height: 60px;">
 			<div class = "pophead">
 			</div>
+		</div>
+		<div style = "width: 100%; text-align: center; height: 60px;">
 			<div class = "popbody">
 			</div>
 		</div>
