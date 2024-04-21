@@ -10,10 +10,12 @@
     const kkakarr = []
 	var kkaks = 5;
 	
-	let filename = "./messages.html";
+	let filename = "./messages.txt";
 	//let fr = new FileReader();
 	//fr.readAsText(filename, "utf-8");
 	//fr.onload = () => {console.log(fr.result);};
+	
+	var result = null;
 	
     window.onload = function(){
 	  for (i = 0; i < kkaks; i++){
@@ -27,7 +29,8 @@
 		var xhr = new XMLHttpRequest();
 		xhr.open("GET", filepath, true);
 		xhr.onload = function(){
-			console.log(xhr.responseText);
+			result = xhr.responseText.split('\n');
+			console.log("done");
 		};
 		xhr.send();
 	}
