@@ -50,8 +50,8 @@
 	function popmsg(i){
 	  console.log("message number "+i);
 	  if (allloaded == true){
-		pophead.innerHTML = result[2*i-1];
-		popbody.innerHTML = result[2*i];
+		pophead.innerHTML = result[2*(i-1)];
+		popbody.innerHTML = result[2*i-1];
 		modelem.style.display = "block";
 	  }
 	}
