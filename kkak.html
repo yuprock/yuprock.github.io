@@ -65,8 +65,13 @@
 		//pophead.style.display = "inline";
 	  }
 	  else{
-		pophead.innerHTML = "haha";
-		popbody.innerHTML = "hahaha";
+		pophead.innerHTML = "이시온의 꺅";
+		popbody.innerHTML = "혼재하는 꺅(http://www.kkak.com)은 2024년 6월부터 커서 움직임과 스피커 "+
+		"음량 조절만으로 사랑의 벅차오름을 간접 "+
+		"체험하는 서비스를 제공하고 있으며, "+
+		"무로맨틱이거나 유로맨틱이고 "+
+		"무성애자이거나 유성애자인 수많은 "+
+		"사람들이 꺅의 순간을 함께하고 있다. ";
 		modelem.style.display = "block";
 		modinner.style.display = "block";
 		modclose.style.display = "block";
@@ -109,14 +114,16 @@
     <div class = "modpopmsg" onclick="btnclck()">
 	</div>
 	<div class = "modpop_inner">
-		<div style = "width: 100%; height: 50px;">
-			<button class = "clsbtn" onclick="btnclck()">close<br>button</button>
+		<div style = "width: 100%; height: 26px;">
+			<button class = "clsbtn" onclick="btnclck()">
+				<img src = "./Close_Button.svg">
+			</button>
 		</div>
-		<div style = "width: 100%; text-align: center; height: 30px;">
+		<div style = "width: 100%; text-align: center; height: auto; margin-bottom: 10px">
 			<div class = "pophead">
 			</div>
 		</div>
-		<div style = "width: 100%; text-align: center; height: 20px;">
+		<div class = "popbodywrap">
 			<div class = "popbody">
 			</div>
 		</div>

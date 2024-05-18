@@ -156,10 +156,10 @@
 .clsbtn{
 	position: absolute;
 	display: none;
-	width: 60px;
-	height: 60px;
-	top: 0;
-	right: 0;
+	width: 24px;
+	height: 24px;
+	top: 10;
+	right: 11;
 	/*cursor: pointer;*/
 	text-align: center;
 	z-index: 1;
@@ -169,6 +169,7 @@
 	opacity: 100%;
 	cursor: pointer;
 }
+
 
 .modpopmsg{
 	display: none;
@@ -187,36 +188,83 @@
 
 .modpop_inner{
 	display: none;
-	max-width: 390px;
-	min-height: 300px;
-	width: calc(100% - 48px);
+	min-height: 276px;
+	max-height: 276px;
+	width: 353px;
 	box-sizing: border-box;
 	border-radius: 1%;
 	overflow: hidden;
 	position: fixed;
-	top: 20%;
+	top: 30%;
+	transform: translateY(-50%);
 	left: 50%;
 	background: rgba(255, 255, 255, 0.90);
 	-webkit-transform: translateX(-50%);
 	z-index: 1001;
 	opacity: 100%;
-	padding: 10px;
+	padding: 0px 16px 26px 36px ;
 	box-shadow: 0px -40px 40px 0px rgba(255, 208, 230, 0.25) inset;
 	backdrop-filter: blur(2px);
 	border: 0.3px solid #E6195E;
-	overflow-y: auto;
+	
 }
+
+.popbodywrap{
+	width: 100%;
+	height: calc(276px - 94px);
+	text-align: center;
+	max-height: 400px;
+	overflow-y: auto;
+	
+}
+
 
 .popbody{
+	
+	padding-right:16px;
+	display: block;
+	max-height: calc(276px-26px);
 	font-size: 16px;
-	font-family:  "bookkmyungjo";
-	color: #000;
+	font-style: normal;
+	font-weight: 300;
+	line-height: 26px;
+	letter-spacing: -0.5px;
+	font-family:  "bookkmyungjo_light";
+	color: rgba(0,0,0,1);
+	
+	word-break: keep-all;
+	
+	-webkit-background-clip: text;
 }
 
+.popbodywrap::-webkit-scrollbar{
+  width: 4px;
+  height: auto;
+  margin-left: 10px;
+}
+
+.popbodywrap::-webkit-scrollbar-thumb{
+  width: 4px;
+  height: auto;
+  background: rgba(1,1,1,0.2);
+}
+
+
+.popbodywrap::-webkit-scrollbar-track{
+  width: 4px;
+  height: auto;
+  background: rgba(0,0,0,0.2);
+}
+
+
 .pophead{
-	font-size: 20px;
 	font-family:  "bookkmyungjo";
 	color: #E6195E;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 32px;
+	padding-right: 20px;
 }
 
 
