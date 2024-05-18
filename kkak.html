@@ -14,6 +14,7 @@
 	var pophead = null;
 	var popbody = null;
 	var hambtn = null;
+	var isSideBar = false;
 	
 	let filename = "./messages.txt";
 	//let fr = new FileReader();
@@ -34,6 +35,7 @@
 	  popbody = document.querySelector('.popbody');
 	  hambtn = document.querySelector('.hambtn');
 	  sidebar = document.querySelector('.sideBar');
+	  sidebarsurr = document.querySelector('.sbsr');
 	  
 	  readFile(filename);
 	  //fetchfile(filename);
@@ -52,7 +54,7 @@
 	
     
 	function popmsg(i){
-	  console.log("message number "+i);
+	  //console.log("message number "+i);
 	  if (allloaded == true){
 		pophead.innerHTML = result[2*(i-1)];
 		popbody.innerHTML = result[2*i-1];
@@ -68,6 +70,9 @@
 		modelem.style.display = "block";
 		modinner.style.display = "block";
 		modclose.style.display = "block";
+		if (isSideBar){
+			sidebarinvis();
+		}
 	  }
 	}
 	
@@ -75,20 +80,29 @@
 		modelem.style.display = "none";
 		modinner.style.display = "none";
 		//document.getElementById("modpop_inner").setAttribute("style", "display: none");
+		if (isSideBar){
+			sidebarinvis();
+		}
 	}
 
 	//$("#clsbtn").click(btnclck);
 	
 	function sidebarvis(){
-		console.log("vis!");
+		//console.log("vis!");
 		sidebar.style.transform = "translateX(-100%)";
 		hambtn.setAttribute("onClick", "sidebarinvis()");
+		sidebarsurr.style.display = "block";
+		sidebarsurr.setAttribute("onClick", "sidebarinvis()");
+		isSideBar = true;
 	}
 	
 	function sidebarinvis(){
-		console.log("invis!");
+		//console.log("invis!");
 		sidebar.style.transform = "translateX(100%)";
 		hambtn.setAttribute("onClick", "sidebarvis()");
+		sidebarsurr.setAttribute("onClick", "");
+		sidebarsurr.style.display = "none";
+		isSideBar = false;
 	}
 	
 	
@@ -116,6 +130,7 @@
 		<div class = "topMenu"><div class = "hambtn" onclick="sidebarvis()">햄버거</div></div>
 		<div class = "topTitle"> 혼재하는 꺅 </div>
 	</div>
+	
 	<div class = "sbw">
 		<div class = "sideBar">
 			<h3>혼재하는 꺅</h3>

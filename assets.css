@@ -35,6 +35,7 @@
 	color: #E6195E;
 	font-weight: 700;
 	z-index: 1001;
+	border-bottom: 0.3px solid #E6195E
 }
 
 .topTitle{
@@ -54,6 +55,8 @@
 	cursor: pointer;
 }
 
+
+
 .sbw{
 	position: relative;
 	width: 100%;
@@ -70,7 +73,7 @@
 	flex-direction: column;
 	transform: translateX(100%);
 	transition: transform 0.4s ease-in-out;
-	z-index: 1001;
+	z-index: 1002;
 	background: rgba(255, 255, 255, 0.90);
 	box-shadow: 0px -100px 40px 0px rgba(255, 208, 230, 0.25) inset;
 	backdrop-filter: blur(2px);
@@ -83,20 +86,20 @@
 .sideBar h3{
 	color: #E6195E;
 	font-family: "bookkmyungjo";
-	font-size: 20px;
-	font-style: normal;
-	line-height: 40px; /* 200% */
-	margin: 0;
+	font-size: 28px;
+	font-weight: 700;
+	line-height: 28px;
+	text-align: left;
+
 }
 
 .sideBar p{
 	font-family: "bookkmyungjo_light";
-	margin: 0;
-	color: #000;
 	font-size: 16px;
-	font-style: normal;
-	line-height: 24px;
-	margin: 8px 0 8px 0;
+	font-weight: 300;
+	line-height: 26px;
+	letter-spacing: -0.5px;
+	text-align: left;
 }
 
 .sideBar .kkak{
@@ -184,7 +187,7 @@
 .modpop_inner{
 	display: none;
 	max-width: 390px;
-	min-height: 500px;
+	min-height: 300px;
 	width: calc(100% - 48px);
 	box-sizing: border-box;
 	border-radius: 1%;
@@ -200,6 +203,7 @@
 	box-shadow: 0px -40px 40px 0px rgba(255, 208, 230, 0.25) inset;
 	backdrop-filter: blur(2px);
 	border: 0.3px solid #E6195E;
+	overflow-y: auto;
 }
 
 .popbody{
