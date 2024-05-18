@@ -35,7 +35,7 @@
 	  popbody = document.querySelector('.popbody');
 	  hambtn = document.querySelector('.hambtn');
 	  sidebar = document.querySelector('.sideBar');
-	  sidebarsurr = document.querySelector('.sbsr');
+	  //sidebarsurr = document.querySelector('.sbsr');
 	  
 	  readFile(filename);
 	  //fetchfile(filename);
@@ -91,8 +91,6 @@
 		//console.log("vis!");
 		sidebar.style.transform = "translateX(-100%)";
 		hambtn.setAttribute("onClick", "sidebarinvis()");
-		sidebarsurr.style.display = "block";
-		sidebarsurr.setAttribute("onClick", "sidebarinvis()");
 		isSideBar = true;
 	}
 	
@@ -100,8 +98,6 @@
 		//console.log("invis!");
 		sidebar.style.transform = "translateX(100%)";
 		hambtn.setAttribute("onClick", "sidebarvis()");
-		sidebarsurr.setAttribute("onClick", "");
-		sidebarsurr.style.display = "none";
 		isSideBar = false;
 	}
 	
