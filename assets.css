@@ -49,10 +49,29 @@
 	height: 56px;
 }
 
-.hambtn{
+.hambtnwrap{
 	float: right;
-	margin: 12px;
+	margin: 12px 18px 12px 18px;
+	width: 34px;
+	height: 34px;
+}
+
+.hambtn{
+	padding: 1px;
+	width: 34px;
+	height: 34px;
 	cursor: pointer;
+	background: none;
+	border: none;
+}
+
+.hambtn:hover{
+	padding: 0;
+	width: 34px;
+	height: 34px;
+	background: none;
+	border-radius: 50%;
+	border: 0.3px solid #E6195E;
 }
 
 
@@ -79,18 +98,32 @@
 	backdrop-filter: blur(2px);
 	border-left: 0.3px solid #E6195E;
 	text-align: left;
-	padding: 20px;
+	padding: 32px 26px 32px 26px;
 	
 	
 }
 
 .sideBar h3{
-	color: #E6195E;
+	color: #000;
 	font-family: "bookkmyungjo";
 	font-size: 28px;
 	font-weight: 700;
 	line-height: 28px;
 	text-align: left;
+	margin: 0 0 18px 0;
+	letter-spacing: -0.5px;
+
+}
+
+.sideBar h4{
+	color: #000;
+	font-family: "bookkmyungjo";
+	font-size: 22px;
+	font-weight: 700;
+	line-height: 28px;
+	text-align: left;
+	margin: 15px 0 0 0;
+	letter-spacing: -0.5px;
 
 }
 
@@ -101,11 +134,59 @@
 	line-height: 26px;
 	letter-spacing: -0.5px;
 	text-align: left;
+	margin: 0 0 18px 0;
 }
 
 .sideBar .kkak{
 	color: #E6195E;
 }
+
+.sbname{
+	color: #e6195e;
+	font-family: "bookkmyungjo";
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 20px;
+	height: 20px;
+	margin-top: 15px;
+	letter-spacing: -0.5px;
+}
+
+.sbprofile{
+	font-family: "bookkmyungjo_light";
+	font-size: 12px;
+	font-weight: 300;
+	line-height: 18px;
+	text-align: left;
+	margin: 4px 0 0 0;
+	letter-spacing: -0.5px;
+}
+
+a{
+	font-family: "bookkmyungjo_light";
+	color: #000;
+	font-size: 12px;
+	font-weight: 300;
+	line-height: 18px;
+	text-align: left;
+	margin: 4px 0 0 0;
+	letter-spacing: -0.5px;
+	text-decoration: underline;
+}
+
+a:visited{
+	font-family: "bookkmyungjo_light";
+	color: #000;
+	font-size: 12px;
+	font-weight: 300;
+	line-height: 18px;
+	text-align: left;
+	margin: 4px 0 0 0;
+	letter-spacing: -0.5px;
+	text-decoration: underline;
+}
+
 
 .kkaktext{
 	color: #e6195e;
@@ -374,3 +455,21 @@
 	line-height: 23.72px; /* 163.636% */
 	margin-bottom: 18px;
 }
+
+.kkakbtn:active{
+	width: 44px;
+	height: 44px;
+	color: #E6195E;
+	border-radius: 50%;
+	border: 0.3px solid #E6195E;
+	background-color: #FFF;
+	font-family: "bookkmyungjo";
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 23.72px; /* 163.636% */
+	margin-bottom: 18px;
+	box-shadow: 0px 0px 20px 0px #E6195E;
+}
+
+

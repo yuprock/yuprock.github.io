@@ -114,6 +114,11 @@
 		isSideBar = false;
 	}
 	
+	function copyThis(ths){
+		var text = ths.textContent;
+		window.navigator.clipboard.writeText(text);
+		window.alert("복사되었습니다!");
+	}
 	
   </script>
   <style>
@@ -138,13 +143,19 @@
 	</div>
 	
 	<div class = "topBar">
-		<div class = "topMenu"><div class = "hambtn" onclick="sidebarvis()">햄버거</div></div>
+		<div class = "topMenu">
+			<div class = "hambtnwrap">
+				<button class = "hambtn" onclick="sidebarvis()">
+					<img src = "./Menu_Button.svg">
+				</button>
+			</div>
+		</div>
 		<div class = "topTitle"> 혼재하는 꺅 </div>
 	</div>
 	
 	<div class = "sbw">
 		<div class = "sideBar">
-			<h3>혼재하는 꺅</h3>
+			<h3><span class = "kkak">혼재하는 꺅</span></h3>
 			<p>25세의 무로맨틱 무성애자 이시온씨는 사랑으로 충만한 채 <span class = "kkak">꺅꺅</span>거리다가, 
 			꺅이야말로 애정과 사랑의 가장 단초적인 형태이며 그 작은 탄성으로부터 무한한 
 			감정을 연역해 낼 수 있다는 사실을 깨닫는다. 스스로의 <span class = "kkak">꺅</span> 소리를 반복해 듣던 
@@ -159,6 +170,21 @@
 			<button class = "kkakbtn" onclick="location.href='https://forms.gle/vXDcgXhUfqgHBvqp7'">
 				꺅
 			</button>
+			</div>
+			<h4>만든 사람들</h4>
+			<div class ="sbname">
+				이시온 <span style = "color: #000; font-size: 12px; line-height: 20px;">디자인</span>
+			</div>
+			<div class = "sbprofile">
+				인스타그램 <a href = "https://www.instagram.com/zionlee00/"> @zionlee00 </a> <br>
+				이메일 <span style = "text-decoration: underline; cursor: pointer;" onclick="copyThis(this)">a01030999806@gmail.com</span>
+			</div>
+			<div class ="sbname">
+				박엽록 <span style = "color: #000; font-size: 12px; line-height: 20px;">개발</span>
+			</div>
+			<div class = "sbprofile">
+				깃허브 @yuprock <br>
+				이메일 <span style = "text-decoration: underline; cursor: pointer;" onclick="copyThis(this)">natsumiub1415@gmail.com</span>
 			</div>
 		</div>
 	
@@ -175,13 +201,6 @@
 			<div class = "kkaktext" id="t5" style = "font-size: 50px;" onclick="popmsg(5)">꺅</div>
 		</div>
 		<div class = "kkakline" id = "2">
-			<span class = "kkaktext" style = "font-size: 50px;">꺅</span>
-			<div class = "kkakblank" id = "p1"></div>
-			<div class = "kkaktext" style = "font-size: 50px;">꺅</div>
-			<div class = "kkakblank" id = "p2"></div>
-			<div class = "kkaktext" style = "font-size: 50px;">꺅</div>
-			<div class = "kkakblank" id = "p3"></div>
-			<div class = "kkaktext" style = "font-size: 50px;">꺅</div>
 		</div>
 		<!--이거<br>어디까지<br>늘어나는거예요?<br>이거<br>어디까지<br>늘어나는거예요?<br>
 		이거<br>어디까지<br>늘어나는거예요?<br>이거<br>어디까지<br>늘어나는거예요?<br>
