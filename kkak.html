@@ -115,15 +115,19 @@
 	//$("#clsbtn").click(btnclck);
 	
 	function sidebarvis(){
-		//console.log("vis!");
+		sidebar.style.visibility = "visible";
 		sidebar.style.transform = "translateX(-100%)";
 		hambtn.setAttribute("onClick", "sidebarinvis()");
 		isSideBar = true;
 	}
 	
 	function sidebarinvis(){
-		//console.log("invis!");
 		sidebar.style.transform = "translateX(100%)";
+		setTimeout(() => {
+		  sidebar.style.visibility = "hidden";
+		  //sidebar.style.display = "none";
+		}, 500);
+		//sidebar.style.visibility = "hidden";
 		hambtn.setAttribute("onClick", "sidebarvis()");
 		isSideBar = false;
 	}
@@ -137,7 +141,7 @@
   </script>
   <style>
   </style>
-  <body style = "margin: 0; background: #fff; text-align: center; overflow-X: hidden;">
+  <body style = "margin: 0; background: #fff; text-align: center; overflow-x: hidden; width: 100%;">
     <div class = "modpopmsg" onclick="btnclck()">
 	</div>
 	<div class = "modpop_inner">
