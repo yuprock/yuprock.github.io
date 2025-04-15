@@ -1,10 +1,12 @@
 <html>
   <head>
     <title>Home</title>
+	<meta charset="UTF-8">
     <meta name="viewport" content="minimum-scale=1.0, width=100vw, initial-scale=1.0, maximum-scale=5.0">
-    <link rel="shortcut icon" href="favicon.ico" type="image/kkak-icon">
-    <link rel="icon" href="favicon.ico" type="image/kkak-icon">
-	<link rel="stylesheet" href="./assets.css" type="text/css">
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/kkak-icon">
+    <link rel="icon" href="./assets/favicon.ico" type="image/kkak-icon">
+	<link rel="stylesheet" href="./assets/assets.css" type="text/css">
+	<script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
   </head>
   <script>
     var kkakarr = []
@@ -14,14 +16,12 @@
 	var pophead = null;
 	var popbody = null;
 	var hambtn = null;
+    var container = null;
 	var isSideBar = false;
-	
+	const animationNames = ["blink1", "blink2", "blink3"]
 	let filename = "./messages.txt";
-	//let fr = new FileReader();
-	//fr.readAsText(filename, "utf-8");
-	//fr.onload = () => {console.log(fr.result);};
 	
-	var result = null;
+	var result = [];
 	var allloaded = false;
 	
 	var elemsctop = 0;
@@ -37,20 +37,54 @@
 	  popbody = document.querySelector('.popbody');
 	  hambtn = document.querySelector('.hambtn');
 	  sidebar = document.querySelector('.sideBar');
-	  //sidebarsurr = document.querySelector('.sbsr');
+	  container = document.querySelector('.kkakline');
 	  
-	  readFile(filename);
-	  //fetchfile(filename);
+	  // The first blank
+	  const firstBlank = document.createElement("div");
+	  firstBlank.className = "kkakblank";
+	  const firstBlankWidth = 10 + Math.floor(Math.random() * 251); // 10~300px
+	  firstBlank.style.width = `${firstBlankWidth}px`;
+	  container.appendChild(firstBlank);
+	  
+      for (let i = 1; i <= 77; i++) {
+        const textDiv = document.createElement("div");
+        textDiv.className = "kkaktext";
+        textDiv.id = `t${i}`;
+        textDiv.textContent = "꺅";
+        textDiv.onclick = () => popmsg(i);
+
+        const randomDuration = (10 + Math.random() * 30).toFixed(1); // 10~40s
+        const randomDelay = (Math.random() * 3).toFixed(2); // 0~3s
+        const randomTop = genrandomOffset(-25, 26); // -25~25px
+		const randomAniName = animationNames[Math.floor(Math.random() * animationNames.length)];
+		
+        textDiv.style.animationName = randomAniName;
+		textDiv.style.opacity = `${(40 + Math.random() * 60).toFixed(0)}%`;
+        textDiv.style.animationDuration = `${randomDuration}s`;
+        textDiv.style.animationDelay = `${randomDelay}s`;
+        textDiv.style.top = `${randomTop}px`;
+
+        container.appendChild(textDiv);
+
+        const blankDiv = document.createElement("div");
+        blankDiv.className = "kkakblank";
+        const randomWidth = 50 + Math.floor(Math.random() * 251); // 50~300px
+        blankDiv.style.width = `${randomWidth}px`;
+        container.appendChild(blankDiv);
+      }
+	  
 	  window.addEventListener("click", () => {
 		const elem = document.querySelector('.popbodywrap');
 		})
 	  
 	}
-	
 
-	
-	
-	
+	function genrandomOffset(min, max) {
+	  off = max - min;
+      return Math.floor(min+Math.random() * max);
+	}
+
+	/*
 	function readFile(filepath){
 		var xhr = new XMLHttpRequest();
 		xhr.open("GET", filepath, true);
@@ -61,13 +95,29 @@
 		};
 		xhr.send();
 	}
+	*/
 	
+	fetch("messages.xlsx")
+	  .then(res => res.arrayBuffer())
+	  .then(data => {
+		const workbook = XLSX.read(data, { type: "array" });
+		const sheet = workbook.Sheets[workbook.SheetNames[0]];
+		const sheetData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+
+		for (let i = 0; i < sheetData.length; i++) {
+		  if (sheetData[i].length >= 2) {
+			result.push([sheetData[i][0], sheetData[i][1]]);
+		  }
+		}
+		allloaded = true;
+		console.log("messages.xlsx loaded:", result);
+	  });
     
 	function popmsg(i){
 	  //console.log("message number "+i);
 	  if (allloaded == true){
-		pophead.innerHTML = result[2*(i-1)];
-		popbody.innerHTML = result[2*i-1];
+		pophead.innerHTML = result[i-1][0];
+		popbody.innerHTML = result[i-1][1];
 		modelem.style.display = "block";
 		modinner.style.display = "block";
 		modclose.style.display = "block";
@@ -139,15 +189,13 @@
 	}
 	
   </script>
-  <style>
-  </style>
   <body style = "margin: 0; background: #fff; text-align: center; overflow-x: hidden; width: 100%;">
     <div class = "modpopmsg" onclick="btnclck()">
 	</div>
 	<div class = "modpop_inner">
 		<div style = "width: 100%; height: 26px;">
 			<button class = "clsbtn" onclick="btnclck()">
-				<img src = "./Close_Button_default.svg">
+				<img src = "./assets/Close_Button_default.svg">
 			</button>
 		</div>
 		<div style = "width: 100%; text-align: center; height: auto; margin-bottom: 10px">
@@ -164,7 +212,7 @@
 		<div class = "topMenu">
 			<div class = "hambtnwrap">
 				<button class = "hambtn" onclick="sidebarvis()">
-					<img src = "./Menu_Button.svg">
+					<img src = "./assets/Menu_Button.svg">
 				</button>
 			</div>
 		</div>
@@ -208,15 +256,7 @@
 	
 	<div class = "body">
 		<div class = "kkakline">
-			<div class = "kkaktext" id="t1" style = "font-size: 50px;" onclick="popmsg(1)">꺅</div>
-			<div class = "kkakblank" id = "p1"></div>
-			<div class = "kkaktext" id="t2" style = "font-size: 50px;" onclick="popmsg(2)">꺅</div>
-			<div class = "kkakblank" id = "p2"></div>
-			<div class = "kkaktext" id="t3" style = "font-size: 50px;" onclick="popmsg(3)">꺅</div>
-			<div class = "kkakblank" id = "p1"></div>
-			<div class = "kkaktext" id="t4" style = "font-size: 50px;" onclick="popmsg(4)">꺅</div>
-			<div class = "kkakblank" id = "p2"></div>
-			<div class = "kkaktext" id="t5" style = "font-size: 50px;" onclick="popmsg(5)">꺅</div>
+			
 		</div>
 		<div class = "kkakline" id = "2">
 		</div>

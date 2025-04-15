@@ -13,13 +13,6 @@ html{
 	overflow: hidden;
 }
 
-.kkakline{
-	height: 70px;
-	width: fit-content;
-	text-align: center;
-	margin: 0 auto;
-	padding: 10px;
-}
 
 
 .topBar {
@@ -194,51 +187,6 @@ a:visited{
 }
 
 
-.kkaktext{
-	color: #e6195e;
-	font-family: "bookkmyungjo";
-	float: left;
-	cursor: pointer;
-}
-
-.kkaktext#t1{
-	position: relative;
-	top: -20;
-	animation-duration: 40s;
-	animation-name: blink;
-	animation-timing-function: ease;
-	animation-iteration-count: infinite;
-}
-
-.kkaktext#t2{
-	position: relative;
-	top: 20;
-	animation-duration: 40s;
-	animation-name: blink2;
-	animation-timing-function: ease;
-	animation-iteration-count: infinite;
-}
-
-.kkaktext#t3{
-	animation-duration: 40s;
-	animation-name: blink;
-	animation-timing-function: ease;
-	animation-iteration-count: infinite;
-}
-
-.kkaktext#t4{
-	animation-duration: 40s;
-	animation-name: blink3;
-	animation-timing-function: ease;
-	animation-iteration-count: infinite;
-}
-
-.kkaktext#t5{
-	animation-duration: 14s;
-	animation-name: blink2;
-	animation-timing-function: ease;
-	animation-iteration-count: infinite;
-}
 
 .clsbtn{
 	position: absolute;
@@ -363,7 +311,7 @@ a:visited{
 
 
 
-@keyframes blink{
+@keyframes blink1{
 	0% {
 		opacity: 100%;
 	}
@@ -375,52 +323,51 @@ a:visited{
 	}
 }
 
-@keyframes blink2{
+@keyframes blink2 {
 	0% {
-		opacity: 50%;
+		opacity: 70%; 
 	}
-	8%{
+	25% {
 		opacity: 40%;
 	}
-	58%{
+	75% {
 		opacity: 100%;
 	}
-	100% {
-		opacity: 50%;
+	100%{
+		opacity: 70%;
 	}
 }
 
-@keyframes blink3{
-	0% {
-		opacity: 70%;
-	}
-	25%{
-		opacity: 40%;
-	}
-	75%{
-		opacity: 100%;
-	}
-	100% {
-		opacity: 70%;
-	}
+@keyframes blink3 {
+  0%   { opacity: 50%; }
+  50%  { opacity: 100%; }
+  100% { opacity: 50%; }
+}
+
+
+.kkakline{
+	height: 70px;
+	width: fit-content;
+	text-align: center;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+.kkaktext {
+	color: #e6195e;
+	font-family: "bookkmyungjo";
+	font-size: 50px;
+	float: left;
+	cursor: pointer;
+	animation-name: blink;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	animation-fill-mode: both;
 }
 
 .kkakblank{
 	height: inherit;
 	float: left;
-}
-
-.kkakblank#p1{
-	width: 50px;
-}
-.kkakblank#p2{
-	width: 100px;
-}
-.kkakblank#p3{
-	width: 150;
-}
-.kkakblank#p4{
-	width: 200px;
 }
 
 .kkakbutton{
