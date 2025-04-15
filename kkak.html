@@ -9,6 +9,7 @@
 	<script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
   </head>
   <script>
+    const kkaknum = 77;
     var kkakarr = []
 	var kkaks = 5;
 	var modelem = null;
@@ -46,7 +47,7 @@
 	  firstBlank.style.width = `${firstBlankWidth}px`;
 	  container.appendChild(firstBlank);
 	  
-      for (let i = 1; i <= 77; i++) {
+      for (let i = 1; i <= kkaknum; i++) {
         const textDiv = document.createElement("div");
         textDiv.className = "kkaktext";
         textDiv.id = `t${i}`;
@@ -55,9 +56,10 @@
 
         const randomDuration = (10 + Math.random() * 30).toFixed(1); // 10~40s
         const randomDelay = (Math.random() * 3).toFixed(2); // 0~3s
-        const randomTop = genrandomOffset(-25, 26); // -25~25px
+        const randomTop = genrandomOffset(-25, 26); // -20~20px
 		const randomAniName = animationNames[Math.floor(Math.random() * animationNames.length)];
 		
+		textDiv.style.position = "relative";
         textDiv.style.animationName = randomAniName;
 		textDiv.style.opacity = `${(40 + Math.random() * 60).toFixed(0)}%`;
         textDiv.style.animationDuration = `${randomDuration}s`;
@@ -189,7 +191,7 @@
 	}
 	
   </script>
-  <body style = "margin: 0; background: #fff; text-align: center; overflow-x: hidden; width: 100%;">
+  <body>
     <div class = "modpopmsg" onclick="btnclck()">
 	</div>
 	<div class = "modpop_inner">
@@ -254,12 +256,11 @@
 			</div>
 		</div>
 	
-	<div class = "body">
+	<div class = "kkakbody">
 		<div class = "kkakline">
 			
 		</div>
-		<div class = "kkakline" id = "2">
-		</div>
+		
 		<!--이거<br>어디까지<br>늘어나는거예요?<br>이거<br>어디까지<br>늘어나는거예요?<br>
 		이거<br>어디까지<br>늘어나는거예요?<br>이거<br>어디까지<br>늘어나는거예요?<br>
 		이거<br>어디까지<br>늘어나는거예요?<br>이거<br>어디까지<br>늘어나는거예요?<br>
