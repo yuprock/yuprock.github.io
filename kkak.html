@@ -40,20 +40,23 @@
 	  sidebar = document.querySelector('.sideBar');
 	  container = document.querySelector('.kkakline');
 	  
-	  // The first blank
-	  const firstBlank = document.createElement("div");
-	  firstBlank.className = "kkakblank";
-	  const firstBlankWidth = 10 + Math.floor(Math.random() * 251); // 10~300px
-	  firstBlank.style.width = `${firstBlankWidth}px`;
-	  container.appendChild(firstBlank);
+
 	  
       for (let i = 1; i <= kkaknum; i++) {
+	    // 1. Blank
+	    const blankDiv = document.createElement("div");
+        blankDiv.className = "kkakblank";
+        const randomWidth = 70 + Math.floor(Math.random() * 221); // 50~250px
+        blankDiv.style.width = `${randomWidth}px`;
+        container.appendChild(blankDiv);
+		
         const textDiv = document.createElement("div");
         textDiv.className = "kkaktext";
         textDiv.id = `t${i}`;
         textDiv.textContent = "꺅";
         textDiv.onclick = () => popmsg(i);
-
+		
+		// 2. Kkak
         const randomDuration = (10 + Math.random() * 30).toFixed(1); // 10~40s
         const randomDelay = (Math.random() * 3).toFixed(2); // 0~3s
         const randomTop = genrandomOffset(-25, 26); // -20~20px
@@ -68,11 +71,7 @@
 
         container.appendChild(textDiv);
 
-        const blankDiv = document.createElement("div");
-        blankDiv.className = "kkakblank";
-        const randomWidth = 70 + Math.floor(Math.random() * 221); // 50~250px
-        blankDiv.style.width = `${randomWidth}px`;
-        container.appendChild(blankDiv);
+        
       }
 	  
 	  window.addEventListener("click", () => {
