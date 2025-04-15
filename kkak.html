@@ -46,22 +46,29 @@
 	    // 1. Blank
 	    const blankDiv = document.createElement("div");
         blankDiv.className = "kkakblank";
-        const randomWidth = 70 + Math.floor(Math.random() * 221); // 50~250px
+        const randomWidth = 70 + Math.floor(Math.random() * 201); // 70~200px
         blankDiv.style.width = `${randomWidth}px`;
         container.appendChild(blankDiv);
 		
+		// 1-2. 2nd Blank
+	    const blankDiv2 = document.createElement("div");
+        blankDiv2.className = "kkakblank";
+        const randomWidth2 = 10 + Math.floor(Math.random() * 51); // 0~50px
+        blankDiv2.style.width = `${randomWidth2}px`;
+        container.appendChild(blankDiv2);
+		
+		// 2. Kkak
         const textDiv = document.createElement("div");
         textDiv.className = "kkaktext";
         textDiv.id = `t${i}`;
         textDiv.textContent = "꺅";
         textDiv.onclick = () => popmsg(i);
 		
-		// 2. Kkak
         const randomDuration = (10 + Math.random() * 30).toFixed(1); // 10~40s
         const randomDelay = (Math.random() * 3).toFixed(2); // 0~3s
         const randomTop = genrandomOffset(-30, 30); // -20~20px
 		const randomAniName = animationNames[Math.floor(Math.random() * animationNames.length)];
-		const randomLeft = genrandomOffset(-10, 30)
+		const randomLeft = genrandomOffset(-10, 20)
 		
 		textDiv.style.position = "relative";
         textDiv.style.animationName = randomAniName;
