@@ -59,8 +59,9 @@
 		// 2. Kkak
         const randomDuration = (10 + Math.random() * 30).toFixed(1); // 10~40s
         const randomDelay = (Math.random() * 3).toFixed(2); // 0~3s
-        const randomTop = genrandomOffset(-25, 26); // -20~20px
+        const randomTop = genrandomOffset(-30, 30); // -20~20px
 		const randomAniName = animationNames[Math.floor(Math.random() * animationNames.length)];
+		const randomLeft = genrandomOffset(-10, 30)
 		
 		textDiv.style.position = "relative";
         textDiv.style.animationName = randomAniName;
@@ -68,6 +69,7 @@
         textDiv.style.animationDuration = `${randomDuration}s`;
         textDiv.style.animationDelay = `${randomDelay}s`;
         textDiv.style.top = `${randomTop}px`;
+		textDiv.style.left = `${randomLeft}px`;
 
         container.appendChild(textDiv);
 
